@@ -1,0 +1,101 @@
+generated: '2026-09-27'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 7
+  own: 5
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - docs
+  - identity
+  - other
+  - security
+  - support
+  - website
+hosts:
+- host: api.backflip.ai
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: backflip.ai
+  role: api
+  relation: own
+- host: clarity.com
+  found_by:
+  - pointer
+  types:
+  - Security
+  serves: []
+  registrable_domain: clarity.com
+  role: security
+  relation: other-domain
+- host: docs.backflip.ai
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Documentation
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: backflip.ai
+  role: docs
+  relation: own
+- host: login.backflip.ai
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: backflip.ai
+  role: identity
+  relation: own
+- host: support.backflip.ai
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: backflip.ai
+  role: support
+  relation: own
+- host: www.backflip.ai
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - TermsOfService
+  - PrivacyPolicy
+  - Pricing
+  - Blog
+  - Website
+  serves: []
+  registrable_domain: backflip.ai
+  role: website
+  relation: own
+- host: www.notion.so
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: notion.so
+  role: other
+  relation: other-domain
